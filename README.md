@@ -14,3 +14,7 @@ Krypteringen använder följande metod:
 3. Bokstaven i klartexten förskjuts enligt nyckelns bokstavs position, och resultatet blir den krypterade texten. Om klartexten är längre än nyckeln, upprepas nyckeln tills hela klartexten är krypterad.
 
 4. Om förskjutningen går utanför alfabetet, så börjar den om från början av alfabetet enl. modulo 26.
+
+# Formel för kryptering
+För att kryptera en bokstav i klartexten, används följande formel:
+$(C_i = (P_i + K_i) \mod 26)$
