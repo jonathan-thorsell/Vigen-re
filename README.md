@@ -20,8 +20,8 @@ $$C_i = (P_i + K_i) \pmod{29}$$
 
 Där:
 - $C_i$ är den slutgiltiga, krypterade bokstaven.
-- $P_i$ är bokstavsvärdet för den $i$:te bokstaven i klartexten, där $\{P_i \in \mathbb{Z} \mid 0 \le P_i \le 28\}$
-- $K_i$ är bokstavsvärdet för den $i$:te bokstaven i nyckeln, där $\{K_i \in \mathbb{Z} \mid 0 \le K_i \le 28\}$
+- $P_i$ är bokstavsvärdet för den $i$:te bokstaven i klartexten, där $\lbrace P_i \in \mathbb{Z} \mid 0 \le P_i \le 28\rbrace$
+- $K_i$ är bokstavsvärdet för den $i$:te bokstaven i nyckeln, där $\lbrace K_i \in \mathbb{Z} \mid 0 \le K_i \le 28 \rbrace$
 
 ### Exempel
 > **Klartext:** "TEXT"  
