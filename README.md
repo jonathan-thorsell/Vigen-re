@@ -13,8 +13,40 @@ Krypteringen använder följande metod:
 
 3. Bokstaven i klartexten förskjuts enligt nyckelns bokstavs position, och resultatet blir den krypterade texten. Om klartexten är längre än nyckeln, upprepas nyckeln tills hela klartexten är krypterad.
 
-4. Om förskjutningen går utanför alfabetet, så börjar den om från början av alfabetet enl. modulo 26.
+4. Om förskjutningen går utanför alfabetet, så börjar den om från början av alfabetet enl. modulo 29.
 
-# Formel för kryptering
-För att kryptera en bokstav i klartexten, används följande formel:
-$(C_i = (P_i + K_i) \mod 26)$
+**Krypteringsformel**
+$$C_i = (P_i + K_i) \pmod{29}$$
+
+Där:
+- $C_i$ är den slutgiltiga, krypterade bokstaven.
+- $P_i$ är bokstavsvärdet för den $i$:te bokstaven i klartexten, där $P_i \in \{0, 1, \dots, 28\}$
+- $K_i$ är bokstavsvärdet för den $i$:te bokstaven i nyckeln, där $K_i \in \{0, 1, \dots, 28\}$
+
+### Exempel
+> **Klartext:** "TEXT"  
+> **Nyckel:** "KEY"
+
+$$
+\begin{aligned}
+P &\to \textbf{T}\text{EXT} \implies P_0 = 19 \\
+K &\to \textbf{K}\text{EY} \implies K_0 = 10
+\end{aligned}
+$$
+
+$$
+\begin{align*}
+C_0 &= (P_0 + K_0) \pmod{29} \\
+    &= (19 + 10) \pmod{29} \\
+    &= 29 \pmod{29} \\
+    &\equiv 0 \implies C \to \textbf{A}
+\end{align*}
+$$
+
+**Dekrypteringsformel**\
+$$P_i = (C_i - K_i) \pmod{29}$$
+
+Kod för att automatisera denna process finns i `encrypt.py` samt `decrypt.py`.
+
+## Användning av AI
+AI har under fördjupningens gång använts för att hjälpa till att strukturera och revidera innehållet. Större delen av LaTeX-koden har skrivits för hand, med smärre förslag från AI. AI har även använts för att till stor del skriva koden i Python. AI har inte använts för att skriva någon av de teoretiska delarna, teorin är sammanställd från Wikipedia.

@@ -1,12 +1,11 @@
-alfabetet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+alfabetet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Å", "Ä", "Ö"]
 
-text = input("Enter text to encrypt: ").upper()
-key = input("Enter key: ").upper()
+text = input("Text att krypteras: ").upper()
+key = input("Nyckel: ").upper()
 
-def encrypt(text, key):
-    #vigeneres chiffere
+def vigenere(text, key):
     encrypted_text = ""
-    key_index = 1
+    key_index = 0
     for char in text:
         if char in alfabetet:
             text_index = alfabetet.index(char)
@@ -19,5 +18,5 @@ def encrypt(text, key):
             encrypted_text += char
     return encrypted_text
 
-encrypted = encrypt(text, key)
-print("Encrypted text:", encrypted)
+encrypted = vigenere(text, key)
+print("Krypterad text:", encrypted)
