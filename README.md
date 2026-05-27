@@ -9,7 +9,7 @@ Krypteringen använder följande metod:
 
 1. Välj en nyckel, t.ex. "MATEMATIK".
 
-2. Varje bokstavs position i alfabetet används för att bestämma förskjutningen. Då "M" är den 13:e bokstaven kommer den första bokstaven i klartexten att förskjutas med 13, "A" med 1, "T" med 20, och så vidare.
+2. Varje bokstavs position i alfabetet används för att bestämma förskjutningen. Då "M" har index 12 kommer den första bokstaven i klartexten att förskjutas med 12, "A" med 0 steg (ingen förskjutning), "T" med 19, och så vidare.
 
 3. Bokstaven i klartexten förskjuts enligt nyckelns bokstavs position, och resultatet blir den krypterade texten. Om klartexten är längre än nyckeln, upprepas nyckeln tills hela klartexten är krypterad.
 
